@@ -36,78 +36,6 @@ regexprefer is a memo for helping you find the best regex for a string.
 * `\1` Reference
 * `(?:)` Non Capturing Group
 
-## Lookarounds
-
-<b><details><summary>`(?=)` Positive Lookahead</summary></b>
-```js
-const str = '1st 2nd 3rd'
-const reg = /\d(?=nd)/g // 2
-```
-</details>
-
-<b><details><summary>`(?!)` Negative Lookahead</summary></b>
-```js
-const str = '1st 2nd 3rd'
-const reg = /\d(?!nd)/g // 1 3 
-```
-</details>
-
-<b><details><summary>`(?<=)` Positive Lookbehind</summary></b>
-```js
-const str = '#1 $5 %8'
-const reg = /(?<=%)\d/g // 8 
-```
-</details>
-
-<b><details><summary>`(?<!)` Negative Lookbehind</summary></b>
-```js
-const str = '#1 $5 %8'
-const reg = /(?<!%)\d/g // 1 5 
-```
-</details>
-
-<b><details><summary> `?` Summary </summary><b>
-`?` Where to use:
-
-> classifier
-
-```js
-const str = '-3.1415'
-const reg = /^(\+|-)?\d+(\.\d+)?$/ // Indicates 0 or 1 times 
-const reg = /^[+-]?\d+(\.\d+)?$/
-```
-
-> Matching does not capture
-
-`(?:)` Non Capturing Group
-
-```js
-const str = '-3.1415'
-const reg = /^(?:\+|-)?\d+(?:\.(\d+))?$/
-```
-
-> Non Greediness 
-
-Put the question mark after the quantifier： `*?` `+?` `{1,3}?`
-
-```js
-const str = '12345'
-const reg = /\d+?/g
-```
-
-> Lookbehind
-
-It does not occupy the width, and it is a positive result.
-
-characteristic:
-1. No character consumption
-2. The front and back of the decoration position
-3. Detect any metacharacter and any digit
-
-</details>
-
-
-
 ## Quantifiers And Alternation
 
 * `*` Asterisk
@@ -115,3 +43,71 @@ characteristic:
 * `{1,3}` Quantifier
 * `?` Optional
 * `|` Alternation
+
+## Lookarounds
+
+> `(?=)` Positive Lookahead
+
+
+```js
+const str = '1st 2nd 3rd'
+const reg = /\d(?=nd)/g // 2
+```
+
+> `(?=)` Positive Lookahead
+
+```js
+const str = '1st 2nd 3rd'
+const reg = /\d(?!nd)/g // 1 3 
+```
+
+> `(?=)` Positive Lookahead
+
+```js
+const str = '#1 $5 %8'
+const reg = /(?<=%)\d/g // 8 
+```
+
+> `(?=)` Positive Lookahead
+
+```js
+const str = '#1 $5 %8'
+const reg = /(?<!%)\d/g // 1 5 
+```
+
+## `?` Summary 
+
+`?` Where to use:
+
+**Classifier**
+
+```js
+const str = '-3.1415'
+const reg = /^(\+|-)?\d+(\.\d+)?$/ // Indicates 0 or 1 times 
+const reg = /^[+-]?\d+(\.\d+)?$/
+```
+
+**Matching does not capture**
+
+`(?:)` Non Capturing Group
+
+```js
+const str = '-3.1415'
+const reg = /^(?:\+|-)?\d+(?:\.(\d+))?$/
+```
+**Non Greediness**
+
+Put the question mark after the quantifier： `*?` `+?` `{1,3}?`
+
+```js
+const str = '12345'
+const reg = /\d+?/g
+```
+**Lookbehind**
+
+It does not occupy the width, and it is a positive result.
+
+characteristic:
+1. No character consumption
+2. The front and back of the decoration position
+3. Detect any metacharacter and any digit
