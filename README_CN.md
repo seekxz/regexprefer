@@ -34,38 +34,39 @@ regexprefer 是一个正则备忘录。
 * `\1` 引用第一个分组
 * `(?:)` 非捕获分组
 
+## 量词
+
+* `*` 0 次或多次
+* `+` 1 次或多次
+* `{1,3}` 数量词
+* `?` 可选择 
+* `|` 交替
+
 ## 预查
 
-<b><details><summary>`(?=)` 正向预查</summary></b>
+* `(?=)` 正向预查
 ```js
 const str = '1st 2nd 3rd'
 const reg = /\d(?=nd)/g // 2
 ```
-</details>
-
-<b><details><summary>`(?!)` 负向预查</summary></b>
+* `(?!)` 负向预查
 ```js
 const str = '1st 2nd 3rd'
 const reg = /\d(?!nd)/g // 1 3 
 ```
-</details>
-
-<b><details><summary>`(?<=)` 正向往前预查</summary></b>
+* `(?<=)` 正向往前预查
 ```js
 const str = '#1 $5 %8'
 const reg = /(?<=%)\d/g // 8 
 ```
-</details>
-
-<b><details><summary>`(?<!)` 负向往前预查</summary></b>
+* `(?<!)` 负向往前预查
 ```js
 const str = '#1 $5 %8'
 const reg = /(?<!%)\d/g // 1 5 
 ```
-</details>
 
+## `?` 总结 
 
-<b><details><summary>`?` 总结</summary></b>
 `?` 的使用位置：
 
 > 量词
@@ -102,13 +103,3 @@ const reg = /\d+?/g
 1. 不消耗字符
 2. 修饰所在位置的前后
 3. 检测任意元字符，任意位数
-
-</details>
-
-## 量词
-
-* `*` 0 次或多次
-* `+` 1 次或多次
-* `{1,3}` 数量词
-* `?` 可选择 
-* `|` 交替

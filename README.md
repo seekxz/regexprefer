@@ -46,30 +46,22 @@ regexprefer is a memo for helping you find the best regex for a string.
 
 ## Lookarounds
 
-> `(?=)` Positive Lookahead
-
-
+* `(?=)` Positive Lookahead
 ```js
 const str = '1st 2nd 3rd'
 const reg = /\d(?=nd)/g // 2
 ```
-
-> `(?=)` Positive Lookahead
-
+* `(?=)` Positive Lookahead
 ```js
 const str = '1st 2nd 3rd'
 const reg = /\d(?!nd)/g // 1 3 
 ```
-
-> `(?=)` Positive Lookahead
-
+* `(?=)` Positive Lookahead
 ```js
 const str = '#1 $5 %8'
 const reg = /(?<=%)\d/g // 8 
 ```
-
-> `(?=)` Positive Lookahead
-
+* `(?=)` Positive Lookahead
 ```js
 const str = '#1 $5 %8'
 const reg = /(?<!%)\d/g // 1 5 
@@ -79,7 +71,7 @@ const reg = /(?<!%)\d/g // 1 5
 
 `?` Where to use:
 
-**Classifier**
+> Classifier
 
 ```js
 const str = '-3.1415'
@@ -87,7 +79,7 @@ const reg = /^(\+|-)?\d+(\.\d+)?$/ // Indicates 0 or 1 times
 const reg = /^[+-]?\d+(\.\d+)?$/
 ```
 
-**Matching does not capture**
+> Matching does not capture
 
 `(?:)` Non Capturing Group
 
@@ -95,7 +87,7 @@ const reg = /^[+-]?\d+(\.\d+)?$/
 const str = '-3.1415'
 const reg = /^(?:\+|-)?\d+(?:\.(\d+))?$/
 ```
-**Non Greediness**
+> Non Greediness
 
 Put the question mark after the quantifier： `*?` `+?` `{1,3}?`
 
@@ -103,7 +95,7 @@ Put the question mark after the quantifier： `*?` `+?` `{1,3}?`
 const str = '12345'
 const reg = /\d+?/g
 ```
-**Lookbehind**
+> Lookbehind
 
 It does not occupy the width, and it is a positive result.
 
