@@ -1,6 +1,5 @@
 # regexprefer
 
-regexprefer is a tool to help you find the best regular expression for a given string.
+regexprefer is a memo of regular expression.
 
-[EN](README.md) |
-[CN](README_CN.md)
+[EN](https://seekxz.github.io/regexprefer/) | [CN](https://seekxz.github.io/regexprefer/README_CN.html)
