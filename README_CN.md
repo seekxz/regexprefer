@@ -1,6 +1,6 @@
 # regexprefer
 
-regexprefer 是一个备忘录，帮助你找到最适合字符串的正则表达式。
+regexprefer 是一个正则备忘录。
 
 ## 锚点
 
